@@ -108,13 +108,40 @@ def main():
         hours, sleep_start, sleep_end, sleep_quality, sleep_quantity, work_start, work_end, load_rating)
 
     # Save cognitive performance data to an Excel file
+    def categorize(score):
+        if score < 60:
+            return "Low"
+        elif score < 80:
+            return "Moderate"
+        else:
+            return "High"
+
+    categories = [categorize(s) for s in cognitive_performances]
+
     data = {
         "Time of Day": [(t % 24) for t in time_points],
-        "Predicted Cognitive Performance": cognitive_performances
+        "Predicted Cognitive Performance": cognitive_performances,
+        "Performance Category": categories,
     }
     df = pd.DataFrame(data)
     df.to_excel("cognitive_performance_data.xlsx", index=False)
+
+    # Console summary based on scientific thresholds
+    average_perf = sum(cognitive_performances) / len(cognitive_performances)
+    min_perf = min(cognitive_performances)
+    max_perf = max(cognitive_performances)
+    time_min = time_points[cognitive_performances.index(min_perf)] % 24
+    time_max = time_points[cognitive_performances.index(max_perf)] % 24
+    low_periods = sum(1 for s in cognitive_performances if s < 60)
+    moderate_periods = sum(1 for s in cognitive_performances if 60 <= s < 80)
+
     print("Cognitive performance data saved to 'cognitive_performance_data.xlsx'")
+    print("\n===== Scientific Summary =====")
+    print(f"Average predicted performance: {average_perf:.1f}")
+    print(f"Peak performance of {max_perf:.1f} expected around hour {time_max}")
+    print(f"Lowest performance of {min_perf:.1f} expected around hour {time_min}")
+    print(f"Number of low-performance hours (<60): {low_periods}")
+    print(f"Number of moderate-performance hours (60-80): {moderate_periods}")
 
 if __name__ == "__main__":
     main()
