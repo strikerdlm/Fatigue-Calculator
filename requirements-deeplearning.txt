@@ -1,0 +1,35 @@
+# Optional Deep Learning Dependencies for Enhanced Fatigue Calculator
+# Install these if you want to use the CogPSGFormer-inspired features
+# 
+# Prerequisites: Make sure you have the core requirements installed first:
+# pip install -r requirements.txt
+#
+# Then install these deep learning dependencies:
+# pip install -r requirements-deeplearning.txt
+
+# TensorFlow (recommended for CogPSGFormer implementation)
+# Supports Python 3.8-3.11, tested on Windows
+# Documentation: https://www.tensorflow.org/install
+tensorflow>=2.15.0
+
+# PyTorch (alternative deep learning framework)
+# Documentation: https://pytorch.org/get-started/locally/
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Transformers for attention mechanisms (Hugging Face)
+# Used in CogPSGFormer architecture
+# Documentation: https://huggingface.co/docs/transformers/installation
+transformers>=4.30.0
+
+# Additional ML libraries for deep learning features
+tensorflow-probability>=0.20.0  # For probabilistic modeling
+keras>=2.15.0                   # High-level neural networks API
+
+# Advanced visualization for deep learning models
+tensorboard>=2.15.0            # TensorFlow visualization toolkit
+
+# Note: These dependencies are large (several GB) and not required for core functionality
+# The enhanced fatigue calculator works fully without these packages
+# They are only needed for future CogPSGFormer deep learning integration 

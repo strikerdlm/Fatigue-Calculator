@@ -1,6 +1,7 @@
+# Core dependencies - Required for enhanced fatigue calculator
 pandas>=2.0.0
 matplotlib>=3.5.0
-numpy>=1.21.0
+numpy>=1.21.0,<2.0.0
 openpyxl>=3.1.0
 scikit-learn>=1.3.0
 scipy>=1.9.0
@@ -8,20 +9,38 @@ seaborn>=0.12.0
 jupyter>=1.0.0
 pytest>=7.0.0
 
-# Enhanced 2024 model dependencies
-# For future deep learning integration
-tensorflow>=2.12.0
-torch>=2.0.0
-transformers>=4.30.0
-
-# For advanced statistical analysis
+# Enhanced analysis dependencies
 statsmodels>=0.14.0
 pingouin>=0.5.0
 
-# For data visualization enhancements
+# Visualization enhancements
 plotly>=5.15.0
 bokeh>=3.0.0
 
-# For model validation and testing
+# Model validation and testing
 pytest-cov>=4.0.0
 pytest-benchmark>=4.0.0
+
+# Optional: Deep learning dependencies for future integration
+# Uncomment these lines if you want to install deep learning frameworks
+# Note: These are for future CogPSGFormer implementation and not required for core functionality
+
+# For TensorFlow (Python 3.8-3.11 supported, tested on Windows)
+# tensorflow>=2.15.0
+
+# For PyTorch (alternative to TensorFlow)
+# torch>=2.0.0
+# torchvision>=0.15.0
+
+# For Transformers (Hugging Face)
+# transformers>=4.30.0
+
+# Installation instructions:
+# 1. For core functionality only:
+#    pip install -r requirements.txt
+#
+# 2. For deep learning support (optional):
+#    pip install tensorflow>=2.15.0
+#    # OR
+#    pip install torch>=2.0.0 torchvision>=0.15.0
+#    pip install transformers>=4.30.0
