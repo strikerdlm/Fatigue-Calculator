@@ -1,8 +1,43 @@
-# Cognitive Fatigue Prediction System
+# Fatigue Calculator
 
-## Overview
+## Project Structure (Post-Refactor)
 
-This project implements a scientifically-grounded cognitive fatigue prediction system based on the **Two-Process Model of Sleep Regulation** (Borbély, 1982). The system predicts cognitive performance over time by modeling the interaction between homeostatic sleep pressure (Process S) and circadian rhythmicity (Process C), incorporating workload effects and individual chronotype differences.
+```
+Fatigue-Calculator/
+│
+├── fatigue_calculator/         # Main package (source code)
+│   ├── __init__.py
+│   ├── core.py                 # (main logic from FatigueCalc3.py)
+│   └── ...                     # (other modules)
+│
+├── tests/                      # Unit tests
+│   ├── __init__.py
+│   └── test_core.py
+│
+├── scripts/                    # Standalone scripts (optional)
+│   └── FatigueCalcVerAlfa.py
+│
+├── README.md
+├── LICENSE
+├── requirements.txt
+├── setup.py                    # (for packaging)
+├── pyproject.toml              # (modern build system config)
+├── .gitignore
+├── API_DOCUMENTATION.md
+├── TECHNICAL_DOCUMENTATION.md
+└── INSTALLATION.md
+```
+
+## Usage
+
+- Main logic is now in the `fatigue_calculator` package.
+- Run scripts from the `scripts/` directory.
+- Install with `pip install .` from the project root.
+- Run tests with `pytest` from the project root.
+
+---
+
+(See INSTALLATION.md for more details.)
 
 ## Scientific Foundation
 
