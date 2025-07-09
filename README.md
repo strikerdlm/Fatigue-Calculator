@@ -1,10 +1,10 @@
-# Fatigue Calculator - Enhanced 2024 Research Edition
+# Fatigue Calculator - Enhanced 2025 Research Edition
 
-## Latest Updates - 2024 Research Integration
+## Latest Updates - 2025 Research Integration
 
-🔬 **NEW: Enhanced 2024 Research Edition** - Incorporating the latest scientific findings from 2020-2024 with proper citations
+🔬 **NEW: Enhanced 2025 Research Edition** - Incorporating the latest scientific findings from 2020-2024 with proper citations
 
-### What's New in 2024 Edition
+### What's New in 2025 Edition
 
 - **Adenosine Dynamics**: Glial cell modulation and adenosine system integration
 - **Updated Sleep Inertia**: 15-60 minute duration with bifurcation effects
@@ -18,7 +18,7 @@
 ### Quick Start - Enhanced Version
 
 ```bash
-python scripts/FatigueCalcEnhanced2024.py
+python scripts/FatigueCalcEnhanced2025.py
 ```
 
 **Features:**
@@ -36,7 +36,7 @@ python scripts/FatigueCalcEnhanced2024.py
 ```
 Fatigue-Calculator/
 │
-├── fatigue_calculator/         # Main package (enhanced with 2024 research)
+├── fatigue_calculator/         # Main package (enhanced with 2025 research)
 │   ├── __init__.py
 │   ├── core.py                 # Enhanced core with latest scientific findings
 │   └── ...                     # (other modules)
@@ -46,12 +46,12 @@ Fatigue-Calculator/
 │   └── test_core.py
 │
 ├── scripts/                    # Standalone scripts
-│   ├── FatigueCalcEnhanced2024.py  # NEW: 2024 Research Edition
+│   ├── FatigueCalcEnhanced2025.py  # NEW: 2025 Research Edition
 │   ├── FatigueCalc3.py            # Original basic version
 │   └── FatigueCalcVerAlfa.py      # Advanced version
 │
 ├── Docs/                       # Documentation
-│   ├── 2024_RESEARCH_ENHANCEMENTS.md  # NEW: Comprehensive 2024 updates
+│   ├── 2025_RESEARCH_ENHANCEMENTS.md  # NEW: Comprehensive 2025 updates
 │   ├── API_DOCUMENTATION.md
 │   ├── TECHNICAL_DOCUMENTATION.md
 │   └── INSTALLATION.md
@@ -66,11 +66,11 @@ Fatigue-Calculator/
 
 ## Usage Options
 
-### 1. Enhanced 2024 Research Edition (Recommended)
+### 1. Enhanced 2025 Research Edition (Recommended)
 ```bash
-python scripts/FatigueCalcEnhanced2024.py
+python scripts/FatigueCalcEnhanced2025.py
 ```
-- All latest 2024 research findings
+- All latest 2025 research findings
 - Individual genetic profile support
 - Comprehensive analysis and visualization
 - Scientific citations included
@@ -95,7 +95,7 @@ python scripts/FatigueCalcVerAlfa.py
 
 ## Scientific Foundation
 
-### Two-Process Model with 2024 Enhancements
+### Two-Process Model with 2025 Enhancements
 
 The system builds upon the Two-Process Model with significant enhancements based on 2020-2024 research:
 
@@ -103,7 +103,7 @@ The system builds upon the Two-Process Model with significant enhancements based
 2. **Process C (Circadian Process)**: Enhanced with ultradian rhythms and genetic factors
 3. **Process I (Sleep Inertia)**: Updated with evidence-based duration and bifurcation effects
 
-### Mathematical Framework - 2024 Updates
+### Mathematical Framework - 2025 Updates
 
 #### Enhanced Homeostatic Process (S)
 ```
@@ -145,7 +145,7 @@ E(t) = [(100 * (S(t)/Sc) + (a1 + a2 * (Sc - S(t))/Sc) * C(t) - I(t)) * workload_
 - `individual_modifier`: Genetic and demographic factors
 - `workload_factor`: Whole-day workload effects
 
-## 2024 Research Citations
+## 2025 Research Citations
 
 ### Core References
 1. **Glial Sleep Regulation**: https://academic.oup.com/sleep/article/48/3/zsae314/7954489
@@ -157,7 +157,7 @@ E(t) = [(100 * (S(t)/Sc) + (a1 + a2 * (Sc - S(t))/Sc) * C(t) - I(t)) * workload_
 7. **Workload Effects**: https://pmc.ncbi.nlm.nih.gov/articles/PMC9982770/
 8. **CogPSGFormer**: https://arxiv.org/abs/2501.04076
 
-### Key Parameter Updates Based on 2024 Research
+### Key Parameter Updates Based on 2025 Research
 
 | Parameter | Original | 2024 Enhanced | Evidence Source |
 |-----------|----------|---------------|-----------------|
@@ -177,7 +177,7 @@ E(t) = [(100 * (S(t)/Sc) + (a1 + a2 * (Sc - S(t))/Sc) * C(t) - I(t)) * workload_
 - **Sleep debt tracking**: Evidence-based accumulation and incomplete recovery
 - **Sleep architecture**: Enhanced REM/non-REM effects
 
-### Advanced Features - 2024 Edition
+### Advanced Features - 2025 Edition
 - **Adenosine dynamics**: Real-time adenosine level modeling
 - **Glial modulation**: Sleep quality effects on baseline function
 - **Ultradian rhythms**: 12-hour biological cycles
@@ -197,7 +197,7 @@ E(t) = [(100 * (S(t)/Sc) + (a1 + a2 * (Sc - S(t))/Sc) * C(t) - I(t)) * workload_
 pip install -r requirements.txt
 ```
 
-### Enhanced Dependencies (2024 Edition)
+### Enhanced Dependencies (2025 Edition)
 ```bash
 # Core dependencies
 pandas>=2.0.0
@@ -234,9 +234,9 @@ transformers>=4.30.0
 
 ## Output
 
-### Enhanced 2024 Edition Output
-- **Performance data**: `enhanced_cognitive_performance_2024.xlsx`
-- **Visualization**: `enhanced_cognitive_performance_2024.png`
+### Enhanced 2025 Edition Output
+- **Performance data**: `enhanced_cognitive_performance_2025.xlsx`
+- **Visualization**: `enhanced_cognitive_performance_2025.png`
 - **Metadata**: Complete model parameters and individual factors
 - **Scientific analysis**: Performance zones, risk assessment, sleep debt impact
 
@@ -248,7 +248,7 @@ transformers>=4.30.0
 
 ## Scientific Validation
 
-### Model Parameters (2024 Updates)
+### Model Parameters (2025 Updates)
 The enhanced model parameters are based on the latest 2020-2024 research:
 
 - **Adenosine dynamics**: Glial cell and adenosine system integration
@@ -293,17 +293,17 @@ This project is licensed under the GNU General Public License v3.0. See the [LIC
 ## Author
 
 **Original Author**: Diego Malpica (March 25, 2023)
-**2024 Enhancements**: Based on comprehensive 2020-2024 research integration
+**2025 Enhancements**: Based on comprehensive 2020-2024 research integration
 
 ## Citing This Work
 
 When using the enhanced 2024 model, please cite:
 
 ```bibtex
-@software{fatigue_calculator_2024,
-  title={Enhanced Fatigue Calculator - 2024 Research Edition},
+@software{fatigue_calculator_2025,
+  title={Enhanced Fatigue Calculator - 2025 Research Edition},
   author={Malpica, Diego and Contributors},
-  year={2024},
+  year={2025},
   note={Incorporating 2020-2024 sleep research findings},
   url={https://github.com/[repository]/Fatigue-Calculator}
 }
@@ -317,6 +317,6 @@ When using the enhanced 2024 model, please cite:
 
 ## Disclaimer
 
-This software is for research and educational purposes. The enhanced 2024 model incorporates the latest scientific findings but should not be used as the sole basis for safety-critical decisions. Always consult with qualified professionals for medical or safety-related applications.
+This software is for research and educational purposes. The enhanced 2025 model incorporates the latest scientific findings but should not be used as the sole basis for safety-critical decisions. Always consult with qualified professionals for medical or safety-related applications.
 
-**The 2024 enhancements are based on peer-reviewed research and include proper scientific citations for accuracy and validation.** 
+**The 2025 enhancements are based on peer-reviewed research and include proper scientific citations for accuracy and validation.** 
