@@ -6,6 +6,8 @@
 
 ### What's New in 2025 Edition
 
+- **3-Day Minimum Prediction**: Scientifically validated minimum based on 2024 research
+- **Simplified Data Entry**: User-friendly interface with smart defaults
 - **Adenosine Dynamics**: Glial cell modulation and adenosine system integration
 - **Updated Sleep Inertia**: 15-60 minute duration with bifurcation effects
 - **Ultradian Rhythms**: 12-hour cycles in addition to 24-hour circadian rhythms
@@ -14,6 +16,8 @@
 - **Evidence-Based Sleep Debt**: 0.0056 accuracy decrease per hour of sleep debt
 - **Whole-Day Workload**: Comprehensive workload effects and carryover mechanisms
 - **Deep Learning Framework**: CogPSGFormer-inspired architecture (80.3% accuracy)
+- **Enhanced Visualization**: Multi-panel display with risk assessment
+- **Comprehensive Analysis**: Daily summaries and performance zone classification
 
 ### Quick Start - Enhanced Version
 
@@ -23,11 +27,15 @@ python scripts/FatigueCalcEnhanced2025.py
 
 **Features:**
 - 🧬 Genetic profile assessment
-- 📊 7-day sleep history tracking
+- 📊 Simplified sleep pattern collection
 - 🌙 Enhanced chronotype analysis
 - 🎯 Individual performance prediction
 - 📈 Comprehensive scientific analysis
 - 📋 Detailed Excel export with metadata
+- ⚡ Quick setup with smart defaults
+- 🔬 3-day minimum for scientific accuracy
+- 📊 Multi-panel visualization dashboard
+- ⚠️ Risk assessment and recommendations
 
 ---
 
