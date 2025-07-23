@@ -328,3 +328,51 @@ When using the enhanced 2024 model, please cite:
 This software is for research and educational purposes. The enhanced 2025 model incorporates the latest scientific findings but should not be used as the sole basis for safety-critical decisions. Always consult with qualified professionals for medical or safety-related applications.
 
 **The 2025 enhancements are based on peer-reviewed research and include proper scientific citations for accuracy and validation.** 
+
+<!-- ------------------------------------------------------------------ -->
+## 🔧 Model Calibration Utility (NEW in 2025.1)
+
+Even a well-designed deterministic model benefits from **empirical calibration**.
+The brand-new module `fatigue_calculator.calibration` allows you to fine-tune
+
+the `ml_enhancement` scaling factor against a labelled ground-truth data-set –
+no heavy deep-learning pipeline required.
+
+### Quick example
+```python
+import pandas as pd
+from fatigue_calculator import (
+    simulate_cognitive_performance,  # existing helper
+    optimise_ml_enhancement,         # NEW ✨
+)
+
+# 1) run the deterministic model on your historical data
+my_df = pd.read_csv("study.csv")
+my_df["predicted"] = my_df.apply(
+    lambda row: simulate_cognitive_performance(
+        hours=1,
+        sleep_start=row.sleep_start,
+        sleep_end=row.sleep_end,
+        sleep_quality=row.sleep_quality,
+        sleep_quantity=row.sleep_quantity,
+        work_start=row.work_start,
+        work_end=row.work_end,
+        load_rating=row.load_rating,
+    )[2][0],  # get first-hour performance
+    axis=1,
+)
+
+# 2) optimise the scaling factor
+factor, rmse = optimise_ml_enhancement(my_df.predicted, my_df.actual_performance)
+print(f"Best factor {factor:.3f} reduces RMSE to {rmse:.2f}")
+
+# 3) forward the *factor* to `enhanced_cognitive_performance` for calibrated runs
+```
+
+The helper performs a brute-force grid-search (configurable range & granularity)
+and returns the factor that minimises the root-mean-squared-error. For advanced
+workflows you can plug the resulting value into hyper-parameter optimisation or
+store it per subject for *personalised* predictions.
+
+**Dependencies:** *numpy*, *pandas*, *scikit-learn* – all already declared in
+`requirements.txt`. 
