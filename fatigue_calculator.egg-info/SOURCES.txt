@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+fatigue_calculator/__init__.py
+fatigue_calculator/calibration.py
+fatigue_calculator/core.py
+fatigue_calculator.egg-info/PKG-INFO
+fatigue_calculator.egg-info/SOURCES.txt
+fatigue_calculator.egg-info/dependency_links.txt
+fatigue_calculator.egg-info/requires.txt
+fatigue_calculator.egg-info/top_level.txt
+tests/__init__.py
+tests/test_calibration.py
+tests/test_core.py

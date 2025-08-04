@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: fatigue_calculator
+Version: 0.1.0
+Summary: A scientifically-grounded cognitive fatigue prediction system.
+Author: Your Name
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: openpyxl>=3.1
+Requires-Dist: pytest
+Requires-Dist: numpy
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Dynamic: author
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
