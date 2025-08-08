@@ -43,7 +43,8 @@ def enhanced_homeostatic_process(t, prev_reservoir_level, asleep, ai, sleep_qual
         recovery_factor = sleep_quality * (1 - math.exp(-delta_t / tau1))
         return as_factor + recovery_factor * prev_reservoir_level + (1 - math.exp(-delta_t / tau2)) * (ai - as_factor)
     else:
-        return prev_reservoir_level - K_adjusted * t
+        # Decrease by a fixed step per hour awake (use delta_t, not cumulative t)
+        return prev_reservoir_level - K_adjusted * delta_t
 
 def homeostatic_process(t, prev_reservoir_level, asleep, ai, sleep_quality, sleep_quantity):
     """Legacy homeostatic process - maintained for backward compatibility"""
@@ -356,8 +357,12 @@ def enhanced_simulate_cognitive_performance(hours, sleep_schedule, work_schedule
     time_points = []
     circadian_rhythms = []
     cognitive_performances = []
-    sleep_debt = 0
+    # Initialize sleep debt from provided schedule (if any)
+    sleep_debt = sleep_schedule.get('debt', 0)
     adenosine_level = 1.0
+    # Track time since last wake to model sleep inertia correctly
+    inertia_time_since_wake = 0.0
+    prev_sleep_state = bool(sleep_schedule.get(0, False))
     
     # Extract individual profile
     genetic_profile = individual_profile.get('genetic_profile', [])
@@ -373,13 +378,23 @@ def enhanced_simulate_cognitive_performance(hours, sleep_schedule, work_schedule
         # Determine current state
         current_sleep = sleep_schedule.get(t % 24, False)
         current_work = work_schedule.get(t % 24, False)
-        
-        # Update adenosine level (simplified)
+ 
+         # Update adenosine level (simplified)
         if current_sleep:
             adenosine_level = max(0.5, adenosine_level - 0.1)
         else:
             adenosine_level = min(2.0, adenosine_level + 0.05)
-        
+ 
+        # Update inertia time based on sleep → wake transitions
+        if current_sleep:
+            inertia_time_since_wake = 0.0
+        else:
+            if prev_sleep_state:
+                # Just woke up
+                inertia_time_since_wake = 0.0
+            else:
+                inertia_time_since_wake += 1.0  # hours since wake
+
         # Calculate processes
         if t == 0:
             prev_reservoir_level = 2400
@@ -393,7 +408,7 @@ def enhanced_simulate_cognitive_performance(hours, sleep_schedule, work_schedule
                                          adenosine_level, individual_factors)
         
         Ct = enhanced_circadian_process(t, chronotype_offset, 0.2, 0)
-        It = enhanced_sleep_inertia(t, sleep_schedule.get('quantity', 8), adenosine_level)
+        It = enhanced_sleep_inertia(inertia_time_since_wake, sleep_schedule.get('quantity', 8), adenosine_level)
         
         # Calculate sleep debt impact
         sleep_debt_impact, debt_recovery = enhanced_sleep_debt_model(sleep_debt, 
@@ -401,8 +416,11 @@ def enhanced_simulate_cognitive_performance(hours, sleep_schedule, work_schedule
         sleep_debt -= debt_recovery
         
         # Calculate workload
-        Wt = enhanced_workload_model(8, work_schedule.get('load_rating', 1), 0, current_work)
-        
+        Wt = enhanced_workload_model(work_schedule.get('daily_hours', 8),
+                                     work_schedule.get('load_rating', 1),
+                                     0,
+                                     current_work)
+         
         # Calculate final performance
         Et = enhanced_cognitive_performance(t, Rt, Ct, It, Wt, sleep_debt_impact, 
                                           individual_factors, 1.0)
@@ -411,7 +429,10 @@ def enhanced_simulate_cognitive_performance(hours, sleep_schedule, work_schedule
         time_points.append(t)
         circadian_rhythms.append(Ct)
         cognitive_performances.append(Et)
-    
+
+        # Update previous sleep state for next step
+        prev_sleep_state = current_sleep
+     
     return time_points, circadian_rhythms, cognitive_performances
 
 # Legacy simulation function for backward compatibility
